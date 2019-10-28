@@ -1,0 +1,124 @@
+<div class="container-top">
+	<div class="col-md-8 col-8-top">
+		<div id="theTarget">
+			<div class="image1"></div>
+			<div class="image2"></div>
+			<div class="image3"></div>
+			<div class="image4"></div>
+			<div class="image5"></div>
+		</div>
+	</div>
+	<div class="col-md-4 col-4-top">
+		<h1>What is your</h1>
+		<div id="tricket">
+			<h1><strong>"Tricket"</strong> list?</h1>
+		</div>
+		<p class="tricket-comment"><strong>Carry</strong> your <strong>memories</strong> in your pocket,<br>
+        <strong>Share</strong> the best journies to the <strong>world</strong>,<br>
+		and<br>
+		Make <strong>"Tricket"</strong> list come true !!</p>
+		<button type="button" class="btn btn-default sign_up_button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Creat Passport (sign up)</button>
+		<p>~ Ready for a new journey with <strong>"Tricket"</strong> ~</p>
+		<button type="button" class="btn btn-default sign_in_modal"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Departure (log in)</button>
+	    <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="RlRHLXMJs9W/ynsFupc8uvwOGY62Ny1/wUE4wi6tK+euu5FFahtuVKjz9bLAA8SAEWmdiX8G3ZawDyMN2clmug==">
+		<div class="field">
+			<input id="login_space_email" placeholder=" email" autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+		</div>
+		<div class="field">
+			<input id="login_space_passward" placeholder=" passward" autocomplete="current-password" type="password" name="user[password]" id="user_password">
+		</div>
+		<div class="actions clearfix">
+			<input id="login_button" type="submit" name="commit" value="Log in" data-disable-with="Log in">
+		</div>
+		</form>
+    </div>
+
+
+    <!-- モーダル用 -->
+	<div class="sign_modal_wrapper"></div>
+	<div class="sign_modal">
+	  	<div class="sign_up_modal sign_modal_content">
+	    	<h3>Creat Passport (sign up)</h3>
+	    	<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="YyiW5Pr4PGFO9jAr4Wh95/EEIRpxOH6QjhAhRAx3GlSLx0CM4+rh4FnPvpyb/IXdHGOlHbgJjnn/XjqL+xNXCQ==">
+	    	  <div class="field">
+			    <label for="user_name">Name</label><br>
+			    <input autofocus="autofocus" autocomplete="name" type="name" value="" name="user[name]" id="user_name">
+			  </div>
+			  <div class="field">
+			    <label for="user_email">Email</label><br>
+			    <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+			  </div>
+
+			  <div class="field">
+			    <label for="user_password">Password</label>
+			    <em>(6 characters minimum)</em>
+			    <br>
+			    <input autocomplete="new-password" type="password" name="user[password]" id="user_password">
+			  </div>
+
+			  <div class="field">
+			    <label for="user_password_confirmation">Password confirmation</label><br>
+			    <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+			  </div>
+
+			  <div class="actions">
+			    <input type="submit" name="commit" value="Sign up" data-disable-with="Sign up">
+			  </div>
+			</form>
+	  	</div>
+	  	<div class="sign_in_modal sign_modal_content">
+	    	<h2>Departure (log in)</h2>
+	    	<form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="RlRHLXMJs9W/ynsFupc8uvwOGY62Ny1/wUE4wi6tK+euu5FFahtuVKjz9bLAA8SAEWmdiX8G3ZawDyMN2clmug==">
+			  <div class="field">
+			    <label for="user_email">Email</label><br>
+			    <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+			  </div>
+
+			  <div class="field">
+			    <label for="user_password">Password</label><br>
+			    <input autocomplete="current-password" type="password" name="user[password]" id="user_password">
+			  </div>
+
+			    <div class="field">
+			      <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+			      <label for="user_remember_me">Remember me</label>
+			    </div>
+
+			  <div class="actions">
+			    <input type="submit" name="commit" value="Log in" data-disable-with="Log in">
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+　　<!-- top下のページ用 -->
+<div class="aboutus">
+	<div class="col-md-8 col-8-about">
+		<h1>About Us</h1>
+		<div class="color-box"></div>
+	</div>
+	<div class="col-md-4 col-4-about">
+		<div class="image1"></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

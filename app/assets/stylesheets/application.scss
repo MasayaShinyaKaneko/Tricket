@@ -1,0 +1,157 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.container-top {
+
+	.col-8-top {
+		height: 485px;
+
+		.image1 {
+		background-image: url(slideshow1.jpg);
+		}
+		.image2 {
+		background-image: url(slideshow2.jpg);
+		}
+		.image3 {
+		background-image: url(slideshow3.jpg);
+		}
+		.image4 {
+		background-image: url(slideshow4.jpg);
+		}
+		.image5 {
+		background-image: url(slideshow5.jpg);
+		}
+	}
+	.col-4-top {
+		height: 485px;
+		padding: 15px 0 15px 30px;
+
+		h1{
+
+		}
+		#tricket{
+			strong{
+			font-size: 40px;
+			}
+		}
+		strong {
+			font-size: 20px;
+		}
+
+		.tricket-comment{
+			margin: 30px 0;
+		}
+		.btn {
+			display: block;
+			margin-bottom: 5px;
+		}
+		#login_space_email {
+		    width: 250px;
+		    margin: 0 25px;
+		    display: block;
+		}
+		#login_space_passward {
+		    width: 200px;
+		    margin: 0 0 0 25px;
+		    display: inline-block;
+		    float: left;
+		}
+		.actions  {
+		    width: 50px;
+		    margin: 0 5px 0 5px;
+		    display: inline-block;
+		    float: left;
+		}
+	}
+
+
+	.sign_modal_wrapper {
+	  position: absolute;
+	  width: 100%;
+	  height: 540px;
+	  top: 0;
+	  left: 0;
+	  background-color: black;
+	  opacity: .7;
+	  display: none;
+	}
+	.sign_modal {
+	  position: absolute;
+	  background-color: #fff;
+	  width: 300px;
+	  height: 400px;
+	  top: 60px;
+	  left: 0;
+	  bottom: 0;
+	  right: 40px;
+	  margin: 40px 0 0 auto;
+	  border: 1px solid #eee;
+	  display: none;
+	  text-align: center;
+	}
+	.sign_modal_content {
+	  display: none;
+	  text-align: center;
+	}
+}
+
+.aboutus{
+	height: 485px;
+	.col-8-about {
+		.color-box {
+			height: 410px;
+			width: 100%;
+			background-color: #eee;
+		}
+	}
+	.col-4-about {
+		.image1 {
+		    margin-top: 70px;
+		    background-image: url(aboutus.jpg);
+			height: 405px;
+			width: 315px;
+			background-size: cover;
+		}
+	}
+}
+
+
+
+footer{
+    background-color: #088001;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin-top: 5px;
+	position: fixed;
+    bottom: 0;
+}
