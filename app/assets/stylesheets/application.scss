@@ -14,10 +14,14 @@
  *= require_self
  */
 
+/* bootstrap　*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 
+
+
+/* ページ全体　*/
 * {
   margin: 0;
   padding: 0;
@@ -29,11 +33,62 @@
   clear: both;
 }
 
+/* nav(header)部分 */
+.nav-container {
+	height: 40px;
+	width: 100%;
+	padding: 0 20px;
+	background-color: #088001;
+	position: fixed;
+    top: 0;
+    z-index: 10;
 
-.container-top {
+    .nav-brand {
+    	float: left;
+    	color: white;
+    	font-size: 30px;
+    	font-family: Times New Roman;
+    	text-decoration: none;
+    	line-height: 40px;
+    }
+    .nav-list {
+    	float: right;
 
-	.col-8-top {
-		height: 485px;
+    	.nav-list-item {
+    		float: left;
+    		padding: 0 10px;
+			color: white;
+			font-weight: bold;
+    		font-size: 15px;
+    		text-decoration: none;
+    		line-height: 40px;
+
+    	}
+    }
+}
+
+/* footer部分　*/
+footer {
+    background-color: #088001;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+	position: fixed;
+    bottom: 0;
+    z-index: 3;
+}
+
+
+
+/* トップページ　*/
+.main-container-top {
+
+	.col-md-8 {
+		height: 500px;
+		z-index: 2;
 
 		.image1 {
 		background-image: url(slideshow1.jpg);
@@ -51,14 +106,14 @@
 		background-image: url(slideshow5.jpg);
 		}
 	}
-	.col-4-top {
-		height: 485px;
-		padding: 15px 0 15px 30px;
+	.col-md-4 {
+		height: 500px;
+		padding: 15px 0 15px 20px;
 
 		h1{
 
 		}
-		#tricket{
+		#tricket {
 			strong{
 			font-size: 40px;
 			}
@@ -67,7 +122,7 @@
 			font-size: 20px;
 		}
 
-		.tricket-comment{
+		.tricket-comment {
 			margin: 30px 0;
 		}
 		.btn {
@@ -85,7 +140,7 @@
 		    display: inline-block;
 		    float: left;
 		}
-		.actions  {
+		.actions {
 		    width: 50px;
 		    margin: 0 5px 0 5px;
 		    display: inline-block;
@@ -94,51 +149,61 @@
 	}
 
 
+
+    /* モーダル用　*/
 	.sign_modal_wrapper {
-	  position: absolute;
-	  width: 100%;
-	  height: 540px;
-	  top: 0;
-	  left: 0;
-	  background-color: black;
-	  opacity: .7;
-	  display: none;
+		position: absolute;
+		width: 100%;
+		height: 560px;
+		top: 0;
+		left: 0;
+		background-color: black;
+		opacity: .7;
+		display: none;
 	}
 	.sign_modal {
-	  position: absolute;
-	  background-color: #fff;
-	  width: 300px;
-	  height: 400px;
-	  top: 60px;
-	  left: 0;
-	  bottom: 0;
-	  right: 40px;
-	  margin: 40px 0 0 auto;
-	  border: 1px solid #eee;
-	  display: none;
-	  text-align: center;
+		position: absolute;
+		background-color: #fff;
+		width: 300px;
+		height: 400px;
+		top: 60px;
+		left: 0;
+		bottom: 0;
+		right: 40px;
+		margin: 40px 0 0 auto;
+		border: 1px solid #eee;
+		display: none;
+		text-align: center;
 	}
 	.sign_modal_content {
-	  display: none;
-	  text-align: center;
+		display: none;
+		text-align: center;
 	}
 }
 
-.aboutus{
-	height: 485px;
-	.col-8-about {
-		.color-box {
-			height: 410px;
-			width: 100%;
-			background-color: #eee;
+
+
+/* aboutusページ　*/
+.main-container-bottom {
+	height: 500px;
+
+	.col-md-8 {
+
+		.aboutus{
+
+			.color-box {
+				height: 430px;
+				width: 100%;
+				background-color: #eee;
+			}
 		}
 	}
-	.col-4-about {
+	.col-md-4 {
 		.image1 {
 		    margin-top: 70px;
 		    background-image: url(aboutus.jpg);
-			height: 405px;
-			width: 315px;
+			height: 430px;
+			width: 330px;
 			background-size: cover;
 		}
 	}
@@ -146,12 +211,52 @@
 
 
 
-footer{
-    background-color: #088001;
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    margin-top: 5px;
-	position: fixed;
-    bottom: 0;
+/* User一覧　*/
+.users-container {
+ 	height: 1000px;
+
+	h1{
+  		text-align: center;
+  		margin: 20px 0;
+  	}
+  	.col-md-12 {
+	  	width: 100%;
+	  	margin: 0 auto;
+
+	  	#users-tab-container {
+	  		height: 30px;
+
+		  	li {
+			 	float: left;
+			  	list-style-type: none;
+			  	width: 12.5%;
+			}
+			a {
+				color: #fff;
+				text-decoration: none;
+				display: block;
+				padding: 10px 0;
+				text-align: center;
+				background: #000;
+				border: 1px solid #000;
+				border-bottom: none;
+			}
+			.active {
+				background-color: #088001;
+				color: #fff;
+			}
+		}
+		#users-tab-contents .tab {
+			height: 900px;
+			padding: 20px;
+			background: #fff;
+			border: 1px solid #000;
+			border-top: none;
+			border-radius: 0 0 10px 10px;
+		}
+		#users-tab-contents p{
+			color:#000;
+			line-height: 2.5;
+		}
+	}
 }

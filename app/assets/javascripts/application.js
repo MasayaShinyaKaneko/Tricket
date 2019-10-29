@@ -66,14 +66,31 @@ $(document).on('click', '.sign_modal_wrapper', function() {
     $('.sign_modal_content').hide();
 });
 
-/*Aboutusについて*/
+
+/*ヘッダーのAboutusについて*/
 $(function() {
   $('#to_aboutus').on('click',function(){
     $('body,html').animate({
-    scrollTop:800
+    scrollTop:600
     }, 800);
       return false;
   });
+});
+
+
+/*indexページのタブについて*/
+$(document).on('turbolinks:load', function() {
+    $('#users-tab-contents .tab[id != "tab1"]').hide();
+});
+
+$(document).on('turbolinks:load', function() {
+    $('#users-tab-container a').on('click', function() {
+      $("#users-tab-contents .tab").hide();
+      $("#users-tab-container .active").removeClass("active");
+      $(this).addClass("active");
+      $($(this).attr("href")).show();
+      return false;
+    });
 });
 
 

@@ -1,62 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Travel</title>
+    <title>Tricket</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track':'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track':'reload' %>
   </head>
 
+
   <body>
-
-  <!-- nab(bootstrap) -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid" style="background-color: #088001;">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed"data-toggle="collapse"data-target="#navbarEexample8">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="color: white; font-size: 40px; font-family: Times New Roman">
-        Tricket
-      </a>
+  <!-- nab --> <!-- レスポンシブ対応とハンバーガーが必要 -->
+  <% if user_signed_in? %>
+    <div class="nav-container">
+      <%= link_to "Tricket", users_path, class: "nav-brand" %>
+      <div class="nav-list">
+          <%= link_to "User", user_path(current_user), class: "glyphicon glyphicon-user nav-list-item" %>
+          <%= link_to "Travellers", users_path, class: "glyphicon glyphicon-home nav-list-item" %>
+          <div id="to_aboutus" class="glyphicon glyphicon-comment nav-list-item">About</div>
+          <%= link_to "Return", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-time nav-list-item" %>
+      </div>
     </div>
-    <% if user_signed_in? %>
-    <div class="collapse navbar-collapse" id="navbarEexample8">
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to " Home", root_path, class: "glyphicon glyphicon-home", :style=>"color: white; font-size: 20px; font-weight: bold;" %></li>
-        <li id="to_aboutus"><a href=""  style="color: white; font-size: 20px;"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> About Us</a></li>
-        <li><a href="#"  style="color: white; font-size: 20px;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Creat Passport</a></li>
-        <li><%= link_to " Return", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-time", :style=>"color: white; font-size: 19px; font-weight: bold;" %></li>
-      </ul>
+  <% else %>
+    <div class="nav-container">
+      <%= link_to "Tricket", root_path, class: "nav-brand"%>
+      <div class="nav-list">
+          <%= link_to "Home", root_path, class: "glyphicon glyphicon-home nav-list-item" %>
+          <div id="to_aboutus" class="glyphicon glyphicon-comment nav-list-item">About</div>
+          <%= link_to "Passport", new_user_registration_path, class: "glyphicon glyphicon-pencil nav-list-item" %>
+          <%= link_to "Deperture", new_user_session_path, class: "glyphicon glyphicon-globe nav-list-item" %>
+      </div>
     </div>
-    <% else %>
-    <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to " Home", root_path, class: "glyphicon glyphicon-home", :style=>"margin-right: 10px; color: white; font-size: 19px; font-weight: bold;" %></li>
-        <li id="to_aboutus" style="color: white; font-size: 20px; line-height: 55px;"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> About Us</li>
-        <li><a href="#"  style="color: white; font-size: 20px;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Creat Passport</a></li>
-        <li><a href="#"  style="color: white; font-size: 20px;"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Departure</a></li>
-    </ul>
-    <% end %>
-  </div>
-  </nav>
-
+  <% end %>
   <!-- 固定nabのためのspace -->
-  <div class="space" style="height: 55px;"></div>
+  <div class="space" style="height: 50px; display: block; top: 0;"></div>
 
     <%= yield %>
 
-  <!-- 固定nabのためのspace -->
-  <div class="space" style="height: 55px;"></div>
-
+  <!-- footerのためのspace -->
+  <div class="space" style="height: 50px; display: block; bottom: 0;"></div>
   <footer>
-    <div class="container-footer">
-      <p style="color: white; font-size: 20px;  line-height: 40px;"> © All rights reserved by Tricket.Inc </p>
-    </div>
+      <p>© All rights reserved by Tricket.Inc</p>
   </footer>
   </body>
 </html>
