@@ -14,31 +14,44 @@
   <% if user_signed_in? %>
     <div class="nav-container">
       <%= link_to "Tricket", users_path, class: "nav-brand" %>
-      <div class="nav-list">
+      <div class="nav-list2">
           <%= link_to "User", user_path(current_user), class: "glyphicon glyphicon-user nav-list-item" %>
           <%= link_to "Travellers", users_path, class: "glyphicon glyphicon-home nav-list-item" %>
           <div id="to_aboutus" class="glyphicon glyphicon-comment nav-list-item">About</div>
           <%= link_to "Return", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-time nav-list-item" %>
       </div>
     </div>
+
   <% else %>
     <div class="nav-container">
       <%= link_to "Tricket", root_path, class: "nav-brand"%>
-      <div class="nav-list">
+
+      <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="RlRHLXMJs9W/ynsFupc8uvwOGY62Ny1/wUE4wi6tK+euu5FFahtuVKjz9bLAA8SAEWmdiX8G3ZawDyMN2clmug==">
+      <div class="field">
+        <input id="login_space_email" placeholder=" email" autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+      </div>
+      <div class="field">
+        <input id="login_space_passward" placeholder=" passward" autocomplete="current-password" type="password" name="user[password]" id="user_password">
+      </div>
+      <div class="actions">
+        <input id="login_button" type="submit" name="commit" value="Log in" data-disable-with="Log in">
+      </div>
+      </form>
+
+      <div class="nav-list1">
           <%= link_to "Home", root_path, class: "glyphicon glyphicon-home nav-list-item" %>
           <div id="to_aboutus" class="glyphicon glyphicon-comment nav-list-item">About</div>
-          <%= link_to "Passport", new_user_registration_path, class: "glyphicon glyphicon-pencil nav-list-item" %>
-          <%= link_to "Deperture", new_user_session_path, class: "glyphicon glyphicon-globe nav-list-item" %>
       </div>
     </div>
   <% end %>
+
   <!-- 固定nabのためのspace -->
-  <div class="space" style="height: 50px; display: block; top: 0;"></div>
+  <div class="space" style="height: 40px; display: block; top: 0;"></div>
 
     <%= yield %>
 
   <!-- footerのためのspace -->
-  <div class="space" style="height: 50px; display: block; bottom: 0;"></div>
+  <div class="space" style="height: 40px; display: block; bottom: 0;"></div>
   <footer>
       <p>© All rights reserved by Tricket.Inc</p>
   </footer>

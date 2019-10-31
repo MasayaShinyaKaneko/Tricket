@@ -71,7 +71,7 @@ $(document).on('click', '.sign_modal_wrapper', function() {
 $(function() {
   $('#to_aboutus').on('click',function(){
     $('body,html').animate({
-    scrollTop:600
+    scrollTop:650
     }, 800);
       return false;
   });
